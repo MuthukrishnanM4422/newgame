@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kahoot-Style Game</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎮 Kahoot-Style Game</h1>
+            <p>Choose your role to start playing</p>
+        </div>
+        
+        <div class="role-selection">
+            <div class="role-card" onclick="navigateTo('admin.html')">
+                <div class="role-icon">👨‍💼</div>
+                <h2>Admin</h2>
+                <p>Create games, manage questions, and control the game flow</p>
+                <button class="role-btn">Enter as Admin</button>
+            </div>
+            
+            <div class="role-card" onclick="navigateTo('player.html')">
+                <div class="role-icon">🎯</div>
+                <h2>Player</h2>
+                <p>Join games, answer questions, and compete with friends</p>
+                <button class="role-btn">Enter as Player</button>
+            </div>
+        </div>
+        
+        <div class="instructions">
+            <h3>How to Use:</h3>
+            <ol>
+                <li><strong>Admin:</strong> Create a game, add questions, and share the PIN</li>
+                <li><strong>Players:</strong> Enter the PIN and your name to join</li>
+                <li><strong>Admin:</strong> Start the game and control the flow</li>
+                <li><strong>Players:</strong> Answer questions within the time limit</li>
+                <li>View real-time results and final scores</li>
+            </ol>
+            <div class="connection-status">
+                <span id="connection-status">🌐 Cloud Storage Ready</span>
+                <small>Works across any browser and device!</small>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function navigateTo(page) {
+            window.location.href = page;
+        }
+        
+        // Initialize connection status
+        document.addEventListener('DOMContentLoaded', function() {
+            const statusElement = document.getElementById('connection-status');
+            statusElement.textContent = '🌐 Cloud Storage Ready';
+            statusElement.style.color = 'var(--success)';
+        });
+    </script>
+</body>
+</html>
